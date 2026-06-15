@@ -39,3 +39,18 @@ jobs:
         with:
           files: ./bin/*.dmg
           generate_release_notes: true
+          body: |
+            ## Native Apple Silicon (arm64) build
+
+            Fork of [prashantgupta24/automatic-mouse-mover](https://github.com/prashantgupta24/automatic-mouse-mover),
+            rebuilt **natively for Apple Silicon** Macs.
+
+            - **arm64 native binary** — no Rosetta 2, no "app not optimized" warning
+            - Fixes the `CGDisplayCreateImageForRect` crash on macOS 15 (API removed by Apple)
+            - Updated `robotgo` to v1.0.2 · requires **macOS 13.0+**
+
+            ### Install
+            1. Download the `.dmg` below
+            2. Open it and drag `amm.app` to Applications
+            3. Launch — it appears in the menu bar
+            4. Allow it in **System Settings → Privacy & Security → Accessibility**
