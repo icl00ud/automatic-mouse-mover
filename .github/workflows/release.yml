@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build app bundle
+        run: make build
+
+      - name: Code sign (ad-hoc)
+        run: codesign --force --deep --sign - ./bin/amm.app
+
+      - name: Create DMG
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          hdiutil create \
+            -volname "Automatic Mouse Mover" \
+            -srcfolder ./bin/amm.app \
+            -ov -format UDZO \
+            "./bin/Automatic-Mouse-Mover-${VERSION}-arm64.dmg"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./bin/*.dmg
+          generate_release_notes: true

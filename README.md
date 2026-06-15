@@ -1,4 +1,18 @@
 
+## 🍎 Apple Silicon (arm64) fork
+
+This is a native **Apple Silicon** build of [prashantgupta24/automatic-mouse-mover](https://github.com/prashantgupta24/automatic-mouse-mover).
+
+- **Native arm64 binary** — no Rosetta 2, no "app not optimized" warning
+- Fixes the `CGDisplayCreateImageForRect` crash on macOS 15 (API removed by Apple)
+- Updated `robotgo` to v1.0.2 · requires **macOS 13.0+**
+
+**Install:** download the latest `.dmg` from [Releases](https://github.com/icl00ud/automatic-mouse-mover/releases), open it, drag `amm.app` to Applications, and launch. It lives in the menu bar.
+
+To launch at login, add it under **System Settings → General → Login Items**, or use a LaunchAgent at `~/Library/LaunchAgents/com.pg.amm.plist`.
+
+---
+
 ## Stable build. Might not be willing to add anything new unless something breaks with macOS versions.
 
 I would like to keep this app as simple as possible. Hence I will not be adding more functionality to it. Thanks for everyone who contributed in making it awesome!
