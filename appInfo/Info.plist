@@ -8,9 +8,23 @@
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.pg.amm</string>
+	<key>CFBundleName</key>
+	<string>Automatic Mouse Mover</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.3.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>LSUIElement</key>
 	<true/>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
 </dict>
 </plist>
